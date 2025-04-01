@@ -1,0 +1,120 @@
+body {
+    font-family: 'Arial', sans-serif; /* Более приятный шрифт */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Светлый фон */
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Минимальная высота экрана */
+    transition: background-color 0.3s, color 0.3s; /* Плавный переход темы */
+}
+
+.container {
+    width: 80%;
+    max-width: 600px; /* Ограничение ширины контента */
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тень */
+}
+
+h1, h2 {
+    text-align: center;
+    color: #3498db; /* Акцентный цвет */
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Важно для правильной ширины */
+}
+
+button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s; /* Плавное изменение цвета при наведении */
+}
+
+button:hover {
+    background-color: #2980b9; /* Более темный оттенок при наведении */
+}
+
+#toggle-theme, #get-data {
+    margin-right: 10px;
+}
+
+#data {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    white-space: pre-wrap; /* Для сохранения форматирования JSON */
+}
+
+footer {
+    text-align: center;
+    margin-top: auto; /* Прижимаем к низу */
+    padding: 20px;
+    background-color: #eee;
+    color: #777;
+}
+
+/* Темная тема */
+body.dark {
+    background-color: #222;
+    color: #eee;
+}
+
+body.dark .container {
+    background-color: #333;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+body.dark h1, body.dark h2 {
+    color: #95a5a6;
+}
+
+body.dark input[type="text"],
+body.dark input[type="password"] {
+    background-color: #444;
+    color: #eee;
+    border-color: #555;
+}
+
+body.dark #data {
+    background-color: #444;
+    color: #eee;
+    border-color: #555;
+}
+.message {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
