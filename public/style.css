@@ -72,8 +72,9 @@ input:focus {
     outline: none;
 }
 
+
 button {
-    width: 100%;
+    flex: 1;
     padding: 12px;
     border: none;
     border-radius: 8px;
@@ -85,45 +86,53 @@ button {
     transition: background 0.3s ease;
 }
 
+button.secondary {
+    background: #6c5ce7;
+}
+
 button:hover {
-    background: #e83e58;
+    opacity: 0.9;
+}
+
+/* Светлая тема */
+body.light {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    color: #333;
+}
+
+body.light .container {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Темная тема */
 body.dark {
-    background: linear-gradient(135deg, #232526, #414345);
-    color: white;
+    background: linear-gradient(135deg, #2c3e50, #34495e); /* Темный градиент */
+    color: #ecf0f1; /* Светлый цвет текста для контраста */
 }
 
+
 body.dark .container {
-    background: rgba(40, 40, 40, 0.95);
+    background-color: #333;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 body.dark h1, body.dark h2 {
-    color: #ff9a9e;
+    color: #95a5a6;
 }
 
-body.dark .auth-section {
-    background: #2b2b2b;
+body.dark input[type="text"],
+body.dark input[type="password"] {
+    background-color: #444;
+    color: #eee;
+    border-color: #555;
 }
 
-body.dark input {
-    background: #333;
-    border: 1px solid #555;
-    color: white;
+body.dark #data {
+    color: #eee;
+    border-color: #555;
 }
 
-body.dark input:focus {
-    border-color: #ff9a9e;
-}
-
-body.dark button {
-    background: #ff9a9e;
-}
-
-body.dark button:hover {
-    background: #e83e58;
-}
 
 /* Анимации */
 @keyframes fadeIn {
@@ -142,4 +151,16 @@ body.dark button:hover {
     .container {
         padding: 30px;
     }
+}
+
+form {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
 }

@@ -5,6 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 
+
 const app = express();
 const port = 3000;
 
@@ -46,16 +47,14 @@ app.post('/register', async (req, res) => {
     const { login, password } = req.body;
 
     if (users[login]) {
-        return res.status(400).send('User already exists');
+        return res.status(400).json({ error: 'Пользователь уже существует' });
     }
 
     const hashedPassword = await hashPassword(password);
     users[login] = { password: hashedPassword };
 
-    req.session.registrationMessage = 'Регистрация прошла успешно! Пожалуйста, войдите.';  // Сохраняем сообщение в сессии
-    console.log("Registered new user: ", login);
-
-    res.redirect('/');
+    console.log("Registered new user:", login);
+    return res.status(200).json({ message: 'Регистрация прошла успешно!' });
 });
 
 app.post('/login', async (req, res) => {
@@ -63,18 +62,20 @@ app.post('/login', async (req, res) => {
 
     const user = users[login];
     if (!user) {
-        return res.status(400).send('Invalid credentials');
+        return res.status(400).json({ error: 'Неверный логин или пароль' });
     }
 
     const passwordMatch = await comparePassword(password, user.password);
-    if (passwordMatch) {
-        req.session.userId = login;
-        console.log("User logged in: ", login);
-        return res.redirect('/profile');
-    } else {
-        return res.status(400).send('Invalid credentials');
+    if (!passwordMatch) {
+        return res.status(400).json({ error: 'Неверный логин или пароль' });
     }
+
+    req.session.userId = login;
+    console.log("User logged in:", login);
+
+    return res.status(200).json({ message: 'Успешный вход', redirect: '/profile' });
 });
+
 
 app.get('/profile', requireLogin, (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'profile.html'));

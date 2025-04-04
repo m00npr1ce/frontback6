@@ -11,31 +11,19 @@
     <h1>Вход / Регистрация</h1>
 
     <div class="form-container">
-        <div id="login-form">
-            <h2>Вход</h2>
-            <form action="/login" method="post">
-                <label for="login-login">Логин:</label>
-                <input type="text" id="login-login" name="login" placeholder="Логин" required><br>
+        <form id="auth-form" method="post">
+            <label for="login">Логин:</label>
+            <input type="text" id="login" name="login" required>
 
-                <label for="login-password">Пароль:</label>
-                <input type="password" id="login-password" name="password" placeholder="Пароль" required><br>
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required>
 
-                <button type="submit">Войти</button>
-            </form>
-        </div>
+            <div class="button-group">
+                <button type="submit" formaction="/login">Войти</button>
+                <button type="submit" formaction="/register" class="secondary">Зарегистрироваться</button>
+            </div>
+        </form>
 
-        <div id="register-form">
-            <h2>Регистрация</h2>
-            <form action="/register" method="post">
-                <label for="register-login">Логин:</label>
-                <input type="text" id="register-login" name="login" placeholder="Логин" required><br>
-
-                <label for="register-password">Пароль:</label>
-                <input type="password" id="register-password" name="password" placeholder="Пароль" required><br>
-
-                <button type="submit">Зарегистрироваться</button>
-            </form>
-        </div>
     </div>
 </div>
 
