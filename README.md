@@ -4,8 +4,7 @@
 2.  Клонируйте репозиторий:
 
     ```bash
-    git clone [URL вашего репозитория]
-    cd [название вашей директории]
+    git clone https://github.com/m00npr1ce/frontback6    
     ```
 
 3.  Установите зависимости:
