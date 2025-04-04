@@ -1,8 +1,8 @@
 {
   "ExpandedNodes": [
     "",
+    "\\.idea",
     "\\public"
   ],
-  "SelectedNode": "\\server.js",
   "PreviewInSolutionExplorer": false
 }
