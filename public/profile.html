@@ -1,22 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Профиль</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Профиль</h1>
+<div class="container">
+    <h1>Профиль</h1>
 
+    <div class="profile-actions">
         <button id="toggle-theme">Сменить тему</button>
         <button id="get-data">Получить данные</button>
-        <div id="data"></div>
-
-        <form action="/logout" method="post">
-            <button type="submit">Выйти</button>
-        </form>
     </div>
 
-    <script src="script.js"></script>
+    <div id="data"></div>
+
+    <form action="/logout" method="post">
+        <button type="submit">Выйти</button>
+    </form>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
